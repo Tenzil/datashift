@@ -103,6 +103,10 @@ module DataShift
             # manually have to detect when actual data ends
             break if !allow_empty_rows && contains_data == false
 
+            puts "***********************TENZIl*************************"
+            puts doc_context.inspect
+            puts "*****************************TENZIL*******************"
+
             if doc_context.errors? && doc_context.all_or_nothing?
               # Error already logged with doc_context.failure
               logger.warn "Row #{current_row_idx} contained errors and has been skipped"
